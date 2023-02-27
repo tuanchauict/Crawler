@@ -3,7 +3,7 @@ from bs4 import BeautifulSoup
 import os
 import time
 
-class LinkCrawler:
+class Get_link:
     def __init__(self, url):
         self.url = url
 
@@ -34,13 +34,17 @@ class LinkCrawler:
             product_names.add(product_name)
         return product_names
 
-    def write_file(self):
-        with open('links.txt','w') as f:
-            for i,link in enumerate(self.get_all_links()):
-                f.write(f'{i+1}. {link}\n\n')
+    # def write_file(self):
+    #     with open('links.txt','w') as f:
+    #         for i,link in enumerate(self.get_all_links()):
+    #             f.write(f'{i+1}. {link}\n\n')
+    #
+    #     with open('product_name.txt', 'w') as f:
+    #         for i,product_name in enumerate(self.get_product_name()):
+    #             f.write(f'{i+1}. {product_name}\n\n')
 
-        with open('product_name.txt', 'w') as f:
-            for i,product_name in enumerate(self.get_product_name()):
-                f.write(f'{i+1}. {product_name}\n\n')
 
+
+# tmp = Get_link('https://www.amazon.co.jp/-/en/dp/B08MPWLJFT/ref=sr_1_10?keywords=%E3%83%8A%E3%82%A4%E3%83%95&qid=1677491754&s=home&sprefix=kni%2Ckitchen%2C903&sr=1-10')
+# tmp.write_file()
 
